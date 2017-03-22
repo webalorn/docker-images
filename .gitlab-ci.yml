@@ -4,15 +4,20 @@ services:
   - docker:1.12.1-dind
 
 stages:
-#  - build
-  - test
-#  - deploy
-#  - fixture
+  - build
 
-Test Dev:
-  stage: test
-  environment: test
+Build web-server:
+  stage: build
+  environment: build
   script:
-    - docker-compose -f docker-compose.yml -f docker-compose.test.yml -p api-tests run --rm functional-tests
+  	- docker build web-server
+  tags:
+    - docker
+
+Build ci-image:
+  stage: build
+  environment: build
+  script:
+  	- docker build ci-image
   tags:
     - docker
