@@ -10,7 +10,7 @@ Build web-server:
   stage: build
   environment: build
   script:
-  	- docker build web-server
+    - docker build web-server
   tags:
     - docker
 
@@ -18,6 +18,6 @@ Build ci-image:
   stage: build
   environment: build
   script:
-  	- docker build ci-image
+    - docker build ci-image
   tags:
     - docker
