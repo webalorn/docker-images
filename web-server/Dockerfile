@@ -7,7 +7,8 @@ RUN apt-get update && \
 RUN apt-get install -y libgmp-dev php7.0-gmp \
 		curl php-curl \
 		php-mbstring \
-		php-xml
+		php-xml \
+		php-intl
 
 RUN a2enmod rewrite headers && \
  	rm -R /etc/apache2/sites-enabled && \
