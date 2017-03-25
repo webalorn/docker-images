@@ -8,6 +8,8 @@ RUN apt-get update && \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN apt-get install -y docker docker-compose
 
+RUN rm /bin/sh && echo 'bash $@' > /bin/sh && chmod 777 /bin/sh
+
 CMD ["bash"]
 
 ENTRYPOINT ["bash", "-c"]
